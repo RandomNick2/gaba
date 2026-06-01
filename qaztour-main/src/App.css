@@ -1,0 +1,104 @@
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 100%;
+}
+
+.bg-image {
+  background-image: url('./assets/photos/traveller-bag-mountains-isolation-1151553.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative; /* Box-қа қатысты орналастыру үшін */
+}
+
+.bg-image::after {
+  content: ''; /* Суреттің үстінде қараңғыландыру қабатын қосу үшін */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Суретті қараңғыландыру */
+  z-index: 0; /* Суреттегі қараңғылану фоннан кейін болады */
+}
+
+.header {
+  filter: blur(10px);
+}
+
+.wave-container {
+  position: relative;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.background-image {
+  position: relative;
+  z-index: 0;
+}
+
+.carousel .slide img {
+  max-width: 300px;
+  max-height: 300px; /* Суреттердің биіктігін шектеу */
+  object-fit: cover; /* Суреттерді пропорционалды қылу */
+}
+
+.carousel .legend {
+  color: #fff;
+  padding: 10px;
+  font-size: 16px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+}
+
+.carousel .control-next.control-arrow:before {
+  border-left-color: #fff;
+}
+
+.carousel .control-prev.control-arrow:before {
+  border-right-color: #fff;
+}
+
+.footer {
+  background-color: #002569;
+}
+
+.tour-bg {
+  width: 100%;
+}
+
+.my-masonry-grid img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+.my-masonry-grid {
+  display: flex;
+  margin-left: -10px; /* Колонкалар арасында бос орын жасау */
+  width: auto;
+}
+
+.my-masonry-grid_column {
+  padding-left: 10px; /* Колонка арасы */
+  background-clip: padding-box;
+}
+
+.my-masonry-grid_column > div {
+  margin-bottom: 10px; /* Суреттер арасындағы бос орын */
+}
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap&subset=cyrillic');
