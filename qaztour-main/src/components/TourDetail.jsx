@@ -56,7 +56,7 @@ const TourDetail = () => {
   const [averageRating, setAverageRating] = useState(0);
   const navigate = useNavigate();
   const [galleryImages, setGalleryImages] = useState([]);
-  const BASE_URL = 'http://127.0.0.1:8000/storage/';
+  const BASE_URL = '/storage/';
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
@@ -65,7 +65,7 @@ const TourDetail = () => {
       setError(null);
       try {
         const response = await axios.get(
-            `http://127.0.0.1:8000/api/tours/${id}`,
+            `/api/tours/${id}`,
             {
               headers: {
                 Accept: 'application/json',

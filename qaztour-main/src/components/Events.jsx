@@ -54,7 +54,7 @@ const EventsPage = () => {
   const [selectedLocation, setSelectedLocation] = useState('')
   const [selectedType, setSelectedType] = useState('')
 
-  const BASE_URL = 'http://127.0.0.1:8000/storage/'
+  const BASE_URL = '/storage/'
 
   const getImageUrl = (imagePath) => {
     if (!imagePath)

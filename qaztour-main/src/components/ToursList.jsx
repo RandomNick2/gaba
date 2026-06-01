@@ -40,7 +40,7 @@ const ToursList = () => {
   const [sortBy, setSortBy] = useState('');
   const [sortDirection, setSortDirection] = useState('asc');
 
-  const BASE_URL = 'http://127.0.0.1:8000/storage/';
+  const BASE_URL = '/storage/';
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language;
 
@@ -75,7 +75,7 @@ const ToursList = () => {
         const fetchedTours = toursResponse.data?.data?.data || [];
 
         // 2. Локацияларды жүктеу
-        const locationsResponse = await axios.get('http://127.0.0.1:8000/api/locations');
+        const locationsResponse = await axios.get('/api/locations');
         const fetchedLocations = locationsResponse.data.data || locationsResponse.data || [];
         setLocations(fetchedLocations); // ✅ Локацияларды күйге сақтау
 

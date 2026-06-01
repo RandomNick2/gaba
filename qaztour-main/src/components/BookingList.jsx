@@ -125,7 +125,7 @@ const ActionButton = styled(Button)(({ theme }) => ({
 }))
 
 // --- Helper function for image URL ---
-const BASE_URL = 'http://127.0.0.1:8000/storage/'
+const BASE_URL = '/storage/'
 const getImageUrl = (imagePath) => {
   if (!imagePath) return 'https://via.placeholder.com/250x200?text=Tour+Image'
   if (imagePath.startsWith('http')) return imagePath
@@ -159,7 +159,7 @@ const showAlert = (severity, message) => {
         return
       }
       const response = await axios.get(
-        `http://localhost:8000/api/bookings/user`,
+        `/api/bookings/user`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -218,7 +218,7 @@ const showAlert = (severity, message) => {
       if (!token) throw new Error('Авторизация токені жоқ.')
 
       const response = await axios.post(
-        'http://localhost:8000/api/paypal/create-order',
+        '/api/paypal/create-order',
         { booking_id: bookingToPay.id },
         { headers: { Authorization: `Bearer ${token}` } }
       )
@@ -244,7 +244,7 @@ const showAlert = (severity, message) => {
       if (!token) throw new Error('Авторизация токені жоқ.')
 
       const response = await axios.post(
-        'http://localhost:8000/api/paypal/capture-order',
+        '/api/paypal/capture-order',
         { orderID: data.orderID },
         { headers: { Authorization: `Bearer ${token}` } }
       )

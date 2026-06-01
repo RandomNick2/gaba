@@ -27,7 +27,7 @@ const HotelDetail = () => {
   const [hotel, setHotel] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const BASE_URL = 'http://127.0.0.1:8000/storage/';
+  const BASE_URL = '/storage/';
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const HotelDetail = () => {
       setError(null);
       try {
         const response = await axios.get(
-            `http://127.0.0.1:8000/api/hotels/${id}`
+            `/api/hotels/${id}`
         );
         console.log('Hotel Detail API Response:', response.data);
 

@@ -60,7 +60,7 @@ const TourBookingPage = () => { // Компонент атауы TourBookingPage
 
         const fetchTourData = async () => {
             try {
-                const response = await axios.get(`http://127.0.0.1:8000/api/tours/${tourId}`, {
+                const response = await axios.get(`/api/tours/${tourId}`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -129,9 +129,9 @@ const TourBookingPage = () => { // Компонент атауы TourBookingPage
         }
 
         try {
-            await axios.get('http://127.0.0.1:8000/sanctum/csrf-cookie');
+            await axios.get('/sanctum/csrf-cookie');
             const response = await axios.post(
-                'http://127.0.0.1:8000/api/bookings_tours',
+                '/api/bookings_tours',
                 payload,
                 {
                     headers: {
@@ -221,7 +221,7 @@ const TourBookingPage = () => { // Компонент атауы TourBookingPage
                             <Grid item xs={12} md={6}>
                                 <Box
                                     component="img"
-                                    src={`http://localhost:8000/storage/${tour.image}`}
+                                    src={`/storage/${tour.image}`}
                                     alt={tourName}
                                     sx={{
                                         width: '100%',

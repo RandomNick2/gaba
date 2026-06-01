@@ -50,7 +50,7 @@ const HotelBooking = () => {
     }
 
     axios
-        .get(`http://127.0.0.1:8000/api/hotels/${hotelId}/book/${roomId}`, {
+        .get(`/api/hotels/${hotelId}/book/${roomId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -104,7 +104,7 @@ const HotelBooking = () => {
 
     try {
       const response = await axios.post(
-          'http://127.0.0.1:8000/api/bookings/',
+          '/api/bookings/',
           payload,
           {
             headers: {

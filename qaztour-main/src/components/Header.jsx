@@ -420,7 +420,7 @@ export default function Header() {
                     sx={{ color: 'black' }}
                 >
                   <Avatar
-                      src={`http://localhost:8000${user?.avatar}`}
+                      src={`${user?.avatar}`}
                       alt={user?.name}
                       sx={{ width: 30, height: 30 }}
                   />

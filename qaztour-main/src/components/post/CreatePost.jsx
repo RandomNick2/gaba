@@ -118,7 +118,7 @@ const CreatePost = () => {
   useEffect(() => {
     const fetchLocations = async () => {
       try {
-        const response = await api.get('http://127.0.0.1:8000/api/locations');
+        const response = await api.get('/api/locations');
         // ✅ API жауабындағы "data" немесе тікелей массив
         setLocations(response.data.data || response.data);
         setLocationsLoading(false);

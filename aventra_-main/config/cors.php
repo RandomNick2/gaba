@@ -11,10 +11,10 @@ return [
      * The development server of Vite already handles CORS.
      * So, you can set the allowed_origins to nothing.
      */
-    'allowed_origins' => [
-        'http://localhost:3000',
-        'http://127.0.0.1:3000',
-    ],
+    'allowed_origins' => array_filter(array_map('trim', explode(',', env(
+        'CORS_ALLOWED_ORIGINS',
+        'http://localhost:3002,http://127.0.0.1:3002'
+    )))),
 
     'allowed_methods' => ['*'], // Барлық HTTP әдістеріне рұқсат
 

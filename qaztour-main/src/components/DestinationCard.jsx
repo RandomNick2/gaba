@@ -10,7 +10,7 @@ import {
   useTheme,
 } from '@mui/material'
 import { motion } from 'framer-motion'
-import axios from 'axios'
+import API from '../../api'
 import { useNavigate } from 'react-router-dom'
 import { calculateAverageRating, getImageUrl } from '../utils/helpers'
 import { useTranslation } from 'react-i18next' // useTranslation импорттау
@@ -30,7 +30,7 @@ const TopRatedToursCarousel = () => {
       setLoading(true)
       setError(null)
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/tours/')
+        const response = await API.get('/tours/')
         const toursData = response.data?.data?.data || []
         const sortedTours = [...toursData].sort(
           (a, b) =>

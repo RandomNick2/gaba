@@ -13,7 +13,7 @@ import {
 } from '@mui/material'
 import DeleteIcon from '@mui/icons-material/Delete'
 
-const API_BASE_URL = 'http://127.0.0.1:8000/api/comments' // BASE_URL-ді анықтау
+const API_BASE_URL = '/api/comments' // BASE_URL-ді анықтау
 
 const CommentSection = ({ postId, currentUserId }) => {
   const [comments, setComments] = useState([])
@@ -159,7 +159,7 @@ const CommentSection = ({ postId, currentUserId }) => {
                   {/* Аватар көрсету (егер comment.user дерегінде avatar жолы болса) */}
                   {comment.user?.avatar && (
                     <Avatar
-                      src={`http://127.0.0.1:8000${comment.user.avatar}`}
+                      src={`${comment.user.avatar}`}
                       sx={{ width: 30, height: 30, mr: 1 }}
                     />
                   )}

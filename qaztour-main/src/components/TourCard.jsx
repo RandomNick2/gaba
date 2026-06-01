@@ -160,11 +160,11 @@ export default function ToursCollection() {
             setError(null);
             try {
                 // 1. Турларды жүктеу
-                const toursResponse = await axios.get('http://127.0.0.1:8000/api/tours_featured');
+                const toursResponse = await axios.get('/api/tours_featured');
                 const fetchedTours = toursResponse.data.data || [];
 
                 // 2. Локацияларды жүктеу
-                const locationsResponse = await axios.get('http://127.0.0.1:8000/api/locations');
+                const locationsResponse = await axios.get('/api/locations');
                 // ✅ API жауабының құрылымын тексеріңіз. Егер locations.data.data болса
                 const fetchedLocations = locationsResponse.data.data || locationsResponse.data || [];
                 setLocations(fetchedLocations); // ✅ Локацияларды күйге сақтау
@@ -188,7 +188,7 @@ export default function ToursCollection() {
 
         if (imagePath.startsWith('http')) return imagePath
 
-        return `http://127.0.0.1:8000/storage/${encodeURIComponent(imagePath)}`
+        return `/storage/${encodeURIComponent(imagePath)}`
 
     }
     const handleCardClick = (tourId) => { navigate(`/tour/${tourId}`); };

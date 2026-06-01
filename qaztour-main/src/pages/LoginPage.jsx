@@ -23,7 +23,8 @@ import { Email, Lock, Person } from '@mui/icons-material'
 import axios from 'axios'
 import { useTranslation } from 'react-i18next'
 
-const API_BASE_URL = 'http://localhost:8000/api'
+const API_BASE_URL = '/api'
+const SANCTUM_BASE_URL = '/sanctum'
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(4),
@@ -240,7 +241,7 @@ const [openSnackbar, setOpenSnackbar] = useState(false);
   const handleRegisterSubmit = async (e) => {
     e.preventDefault()
     try {
-      const csrfResponse = await axios.get(`${API_BASE_URL}/sanctum/csrf-cookie`, {
+      const csrfResponse = await axios.get(`${SANCTUM_BASE_URL}/csrf-cookie`, {
         withCredentials: true,
       })
       const xsrfToken = csrfResponse.headers['x-xsrf-token']

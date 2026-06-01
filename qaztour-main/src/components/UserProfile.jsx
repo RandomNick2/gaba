@@ -21,7 +21,7 @@ import { NavLink, Link } from 'react-router-dom';
 import api from './../utils/axios'; // Сіздің axios инстансыңыз
 import { useTranslation } from 'react-i18next'; // ✅ useTranslation импорты
 
-const BASE_URL = 'http://127.0.0.1:8000'; // Негізгі URL, аватар үшін storage/ жолы қосылады
+const BASE_URL = ''; // Негізгі URL, аватар үшін storage/ жолы қосылады
 
 const UserProfile = () => {
   const [user, setUser] = useState(null);

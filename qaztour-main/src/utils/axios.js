@@ -3,7 +3,7 @@ import axios from 'axios';
 import i18n from './../i18n'; // ✅ Жолдың дұрыстығын тексеріңіз.
 
 const api = axios.create({
-    baseURL: 'http://localhost:8000/api',
+    baseURL: '/api',
     withCredentials: true,
     headers: {
         'Content-Type': 'application/json',

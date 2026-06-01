@@ -13,7 +13,7 @@ import { useTranslation } from 'react-i18next'
 
 import axios from 'axios'
 
-const API_BASE_URL = 'http://localhost:8000'
+const API_BASE_URL = '/api'
 
 const ReviewForm = ({ tourId, onReviewAdded }) => {
   const [content, setContent] = useState('')
@@ -35,7 +35,7 @@ const { t } = useTranslation()
       console.log('Жіберілетін токен:', token)
 
       const response = await axios.post(
-        `${API_BASE_URL}/api/reviews`, // Толық URL мекенжайы
+        `${API_BASE_URL}/reviews`, // Толық URL мекенжайы
 
         {
           tour_id: tourId,

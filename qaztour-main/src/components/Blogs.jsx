@@ -21,7 +21,7 @@ const Blogs = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch('http://localhost:8000/api/posts')
+        const response = await fetch('/api/posts')
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`)
         }
@@ -114,7 +114,7 @@ const Blogs = () => {
                   <CardMedia
                     component="img"
                     height="200"
-                    image={`http://localhost:8000/storage/${blog.images[0].image_path}`}
+                    image={`/storage/${blog.images[0].image_path}`}
                     alt={blog.title}
                   />
                 ) : (

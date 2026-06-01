@@ -46,7 +46,7 @@ const MyBookingsPage = () => {
 
             try {
                 // 1. Тур броньдауларын жүктеу
-                const tourBookingsResponse = await axios.get(`http://127.0.0.1:8000/api/bookings_tours/user`, {
+                const tourBookingsResponse = await axios.get(`/api/bookings_tours/user`, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 const fetchedTourBookings = tourBookingsResponse.data?.bookings || [];
@@ -54,7 +54,7 @@ const MyBookingsPage = () => {
 
                 // 2. Қонақүй броньдауларын жүктеу
                 // Ескерту: сізде bookings/user/{userId} немесе bookings/user деген маршрут болуы керек
-                const hotelBookingsResponse = await axios.get(`http://127.0.0.1:8000/api/bookings/user/${userId}`, { // userId қажет болса
+                const hotelBookingsResponse = await axios.get(`/api/bookings/user/${userId}`, { // userId қажет болса
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 const fetchedHotelBookings = hotelBookingsResponse.data?.bookings || [];

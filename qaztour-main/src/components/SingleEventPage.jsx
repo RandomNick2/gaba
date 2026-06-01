@@ -47,7 +47,7 @@ const getVimeoEmbedUrl = (url) => {
 };
 
 // getImageUrl функциясы (бұрынғыдай, сурет жолдарын BASE_URL-мен біріктіреді)
-const BASE_URL = 'http://127.0.0.1:8000/storage/';
+const BASE_URL = '/storage/';
 const getImageUrl = (imagePath) => {
   if (!imagePath) return 'https://via.placeholder.com/600x400?text=Event+Image';
   if (imagePath.startsWith('http')) return imagePath;

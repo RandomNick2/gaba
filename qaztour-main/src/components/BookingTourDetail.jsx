@@ -54,7 +54,7 @@ const BookingTourDetail = () => {
 
         // API-дан тур брондау мәліметтерін жүктеу
         axios
-            .get(`http://127.0.0.1:8000/api/bookings_tours/${bookingId}`, { // ✅ bookings_tours маршруты
+            .get(`/api/bookings_tours/${bookingId}`, { // ✅ bookings_tours маршруты
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -124,7 +124,7 @@ const BookingTourDetail = () => {
 
         try {
             // ✅bookings_tours маршрутын қолданамыз
-            await axios.delete(`http://127.0.0.1:8000/api/bookings_tours/${bookingId}`, {
+            await axios.delete(`/api/bookings_tours/${bookingId}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -162,7 +162,7 @@ const BookingTourDetail = () => {
 
             // ✅ bookings_tours төлем маршрутын қолданамыз
             const response = await axios.post(
-                `http://127.0.0.1:8000/api/bookings_tours/${bookingId}/payment/success`, // Жаңа маршрут
+                `/api/bookings_tours/${bookingId}/payment/success`, // Жаңа маршрут
                 {
                     paypal_order_id: data.orderID,
                     payer_id: data.payerID,
@@ -214,7 +214,7 @@ const BookingTourDetail = () => {
                             <Grid item xs={12} md={6}>
                                 <Box
                                     component="img"
-                                    src={`http://localhost:8000/storage/${tour?.image}`} // Optional chaining
+                                    src={`/storage/${tour?.image}`} // Optional chaining
                                     alt={tourName}
                                     sx={{
                                         width: '100%',

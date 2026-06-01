@@ -27,7 +27,7 @@ const GalleryImage = styled(CardMedia)(({ theme }) => ({
 }));
 
 // --- Helper function for image URL ---
-const BASE_URL = 'http://127.0.0.1:8000/storage/';
+const BASE_URL = '/storage/';
 
 const getImageUrl = (imagePath) => {
   if (!imagePath) return 'https://via.placeholder.com/300x200?text=No+Image';

@@ -15,5 +15,5 @@ export const getImageUrl = (imagePath) => {
   if (imagePath.startsWith('http')) {
     return imagePath
   }
-  return `http://127.0.0.1:8000/storage/${imagePath}` // Нақты API storage URL-ін қолданыңыз
+  return `/storage/${imagePath}` // Нақты API storage URL-ін қолданыңыз
 }

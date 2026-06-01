@@ -45,7 +45,7 @@ const BookingRoom = () => {
     }
 
     axios
-        .get(`http://127.0.0.1:8000/api/bookings/${bookingId}`, {
+        .get(`/api/bookings/${bookingId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -118,7 +118,7 @@ const BookingRoom = () => {
 
     axios
         .post(
-            `http://127.0.0.1:8000/api/bookings/${bookingId}/cancel`,
+            `/api/bookings/${bookingId}/cancel`,
             { status: 'cancelled' },
             {
               headers: {
@@ -160,7 +160,7 @@ const BookingRoom = () => {
       });
 
       const response = await axios.post(
-          `http://127.0.0.1:8000/api/bookings/${bookingId}/payment/success`,
+          `/api/bookings/${bookingId}/payment/success`,
           {
             paypal_order_id: data.orderID,
             payer_id: data.payerID,
@@ -215,7 +215,7 @@ const BookingRoom = () => {
                 <Grid item xs={12} md={6}>
                   <Box
                       component="img"
-                      src={`http://localhost:8000/storage/${hotel?.image}`}
+                      src={`/storage/${hotel?.image}`}
                       alt={hotelName}
                       sx={{
                         width: '100%',
@@ -252,7 +252,7 @@ const BookingRoom = () => {
                 <Grid item xs={12} md={6}>
                   <Box
                       component="img"
-                      src={`http://localhost:8000/storage/${room_type?.image}`}
+                      src={`/storage/${room_type?.image}`}
                       alt={roomTypeName}
                       sx={{
                         width: '100%',

@@ -100,7 +100,7 @@ const SinglePostPage = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const user = JSON.parse(localStorage.getItem('user'))
-  const BASE_URL = 'http://localhost:8000/storage/' // Суреттер үшін BASE_URL
+  const BASE_URL = '/storage/' // Суреттер үшін BASE_URL
 
   useEffect(() => {
     const fetchPost = async () => {

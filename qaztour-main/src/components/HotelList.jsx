@@ -26,7 +26,7 @@ const HotelList = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  const BASE_URL = 'http://127.0.0.1:8000/storage/';
+  const BASE_URL = '/storage/';
   const { t, i18n } = useTranslation(); // ✅ i18n объектісін аламыз
 
   useEffect(() => {
