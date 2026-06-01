@@ -10,7 +10,7 @@ import {
   useTheme,
 } from '@mui/material'
 import { motion } from 'framer-motion'
-import API from '../../api'
+import API from '../api.js'
 import { useNavigate } from 'react-router-dom'
 import { calculateAverageRating, getImageUrl } from '../utils/helpers'
 import { useTranslation } from 'react-i18next' // useTranslation импорттау
