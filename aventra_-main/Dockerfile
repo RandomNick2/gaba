@@ -1,6 +1,9 @@
+# syntax=docker/dockerfile:1.7
 FROM php:8.2-cli AS vendor
 
-RUN apt-get update \
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+    --mount=type=cache,target=/var/lib/apt/lists,sharing=locked \
+    apt-get update \
     && apt-get install -y --no-install-recommends \
         git \
         libcurl4-openssl-dev \
@@ -18,7 +21,9 @@ RUN apt-get update \
 WORKDIR /app
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 COPY composer.json composer.lock ./
-RUN composer install \
+RUN --mount=type=cache,target=/tmp/composer-cache \
+    COMPOSER_CACHE_DIR=/tmp/composer-cache \
+    composer install \
     --no-dev \
     --prefer-dist \
     --no-interaction \
@@ -29,7 +34,7 @@ FROM node:20-alpine AS assets
 
 WORKDIR /app
 COPY package.json package-lock.json ./
-RUN npm ci
+RUN --mount=type=cache,target=/root/.npm npm ci
 COPY resources ./resources
 COPY public ./public
 COPY vite.config.js ./
@@ -37,7 +42,9 @@ RUN npm run build
 
 FROM php:8.2-apache
 
-RUN apt-get update \
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+    --mount=type=cache,target=/var/lib/apt/lists,sharing=locked \
+    apt-get update \
     && apt-get install -y --no-install-recommends \
         libcurl4-openssl-dev \
         libfreetype6-dev \

@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:1.7
 FROM node:20-alpine AS build
 
 ARG REACT_APP_API_URL=
@@ -5,7 +6,7 @@ ENV REACT_APP_API_URL=${REACT_APP_API_URL}
 
 WORKDIR /app
 COPY package.json package-lock.json ./
-RUN npm install --legacy-peer-deps
+RUN --mount=type=cache,target=/root/.npm npm ci --legacy-peer-deps
 COPY . .
 RUN npm run build
 
