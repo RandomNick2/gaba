@@ -73,7 +73,7 @@ const EventsPage = () => {
         if (selectedLocation) params.location_name = selectedLocation
         if (selectedType) params.event_type = selectedType
 
-        const response = await axios.get('https://cloud-aventra-kz.onrender.com/api/events', {
+        const response = await axios.get('/api/events', {
           params,
         })
         console.log('API Response for Events:', response.data)

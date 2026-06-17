@@ -67,9 +67,7 @@ const SingleEventPage = () => {
       setLoading(true);
       setError(null);
       try {
-        const response = await axios.get(
-            `https://cloud-aventra-kz.onrender.com/api/events/${id}`
-        );
+        const response = await axios.get(`/api/events/${id}`);
         console.log('API Response for Single Event:', response.data); // Бұл жолы толық жауапты қараңыз
 
         // ✅ API жауабының құрылымын тексеру: response.data.data

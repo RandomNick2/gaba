@@ -34,7 +34,7 @@ const HotelList = () => {
       setLoading(true);
       setError(null);
       try {
-        const response = await axios.get('https://cloud-aventra-kz.onrender.com/api/hotels');
+        const response = await axios.get('/api/hotels');
         console.log('Hotel List API Response:', response.data);
 
         // ✅ API жауабындағы қонақүй деректерін дұрыс өңдейміз

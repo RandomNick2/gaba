@@ -79,7 +79,7 @@ const PlacesList = () => {
       setLoading(true);
       setError(null);
       try {
-        const response = await axios.get('https://cloud-aventra-kz.onrender.com/api/places');
+        const response = await axios.get('/api/places');
         console.log('API response for Places:', response.data); // Бұл жерден құрылымды қараңыз
 
         // ✅ ӨЗГЕРІС БҰЛ ЖЕРДЕ: response.data тікелей массив болғандықтан

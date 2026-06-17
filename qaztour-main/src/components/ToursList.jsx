@@ -63,7 +63,7 @@ const ToursList = () => {
       setError(null);
       try {
         // 1. Турларды жүктеу
-        const toursResponse = await axios.get('https://cloud-aventra-kz.onrender.com/api/tours', {
+        const toursResponse = await axios.get('/api/tours', {
           params: {
             search: initialSearch,
             date: initialDate,
