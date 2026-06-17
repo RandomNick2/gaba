@@ -21,6 +21,7 @@ if [ "$RUN_MIGRATIONS" = "true" ]; then
     done
 
     php artisan migrate --force
+    php artisan db:seed --force
 fi
 
 exec "$@"
